@@ -1,7 +1,11 @@
 import '../styles/globals.css'
-
+import StoreLayout from "../layouts/StoreLayout";
 function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+    return (
+        <StoreLayout>
+            <Component {...pageProps} />
+        </StoreLayout>
+    );
 }
 
-export default MyApp
+export default MyApp;
