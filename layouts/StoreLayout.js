@@ -4,7 +4,7 @@ import Sidebar from "./Sidebar";
 
 const StoreLayout = ({children}) => {
     return ( 
-        <div className="container">
+        <div >
             <Header />
             <div className="flex  justify-between">
                 <Sidebar />

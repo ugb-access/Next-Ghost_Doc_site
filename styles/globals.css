@@ -1,3 +1,26 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+    --header-height: 64px;
+    --line-height-primary: 1.5em;
+    --line-height-small: 1.571em;
+}
+
+.main-wrapper {
+    @apply px-3 mx-auto;
+}
+
+.header-container {
+    height: var(--header-height);
+    border-bottom: 1px solid #eaeaea;
+}
+
+.nav-container .navigation-items .navigation-item a, .nav-container .navigation-items .reference-container  {
+    @apply text-secondary block capitalize text-sm px-2.5 cursor-pointer
+}
+
+.nav-container .navigation-items .input-button-container {
+    @apply text-secondary block capitalize text-sm px-2.5 cursor-text border border-[#eaeaea] 
+}
