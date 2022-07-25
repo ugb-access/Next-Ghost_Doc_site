@@ -17,10 +17,67 @@
     border-bottom: 1px solid #eaeaea;
 }
 
-.nav-container .navigation-items .navigation-item a, .nav-container .navigation-items .reference-container  {
-    @apply text-secondary block capitalize text-sm px-2.5 cursor-pointer
+.nav-container .navigation-items .navigation-item a,
+.nav-container .navigation-items .reference-container {
+    @apply text-secondary block capitalize text-sm px-2.5 cursor-pointer hover:text-black;
 }
 
 .nav-container .navigation-items .input-button-container {
-    @apply text-secondary block capitalize text-sm px-2.5 cursor-text border border-[#eaeaea] 
+    @apply text-secondary block capitalize text-sm px-2.5 cursor-text border border-[#eaeaea] hover:text-black;
+}
+
+.main-section-container {
+    margin-top: 64px;
+}
+.sidebar-container {
+    position: sticky;
+    overflow-y: scroll;
+    flex-shrink: 0;
+    background-color: #fff;
+    max-height: calc(100vh - 64px);
+    min-height: calc(100vh - 64px);
+    max-width: 300px;
+    width: 300px;
+    top: 64px;
+    padding: 20px;
+    flex-shrink: 0;
+}
+
+.sidebar-inner-container a {
+    @apply flex items-center text-sm text-secondary hover:text-black;
+}
+
+.sidebar-inner-container .item-container {
+    @apply my-5;
+}
+
+.sidebar-inner-container .item-container:first-child {
+    @apply mt-0;
+}
+
+.sidebar-container::-webkit-scrollbar {
+    background: #fafafa;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    height: 8px;
+    width: 8px;
+}
+.sidebar-container::-webkit-scrollbar-thumb {
+    background: #eaeaea;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+
+.main-section-container {
+    
+    background: #fafafa;
+}
+
+
+.footer-links-inner-container a {
+    display: block;
+    color: #666;
+    @apply hover:text-black
 }

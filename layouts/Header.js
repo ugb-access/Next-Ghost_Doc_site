@@ -63,7 +63,7 @@ const Header = () => {
                 <div className="">
                     <div className="search-container w-full justify-center">
                         <div className="search-bar">
-                            <div className=" relative flex items-center justify-center  "></div>
+                            <div className=" relative flex items-center justify-center"></div>
                             <div className=" search-input-container  ">
                                 <input
                                     className="search-input-field px-3 h-8 max-w-[60vw] w-64 rounded-[5px] bg-white border-[#eaeaea] border outline-0 text-left focus:border-black  "

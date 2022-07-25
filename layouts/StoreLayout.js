@@ -6,7 +6,7 @@ const StoreLayout = ({children}) => {
     return ( 
         <div >
             <Header />
-            <div className="flex  justify-between">
+            <div className="flex main-section-container bg-">
                 <Sidebar />
                 {children}
             </div>
