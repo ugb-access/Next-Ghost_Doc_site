@@ -8,10 +8,12 @@
     --line-height-small: 1.571em;
 }
 
+/* main wrapper */
 .main-wrapper {
     @apply px-3 mx-auto;
 }
 
+/* header Style */
 .header-container {
     height: var(--header-height);
     border-bottom: 1px solid #eaeaea;
@@ -26,9 +28,8 @@
     @apply text-secondary block capitalize text-sm px-2.5 cursor-text border border-[#eaeaea] hover:text-black;
 }
 
-.main-section-container {
-    margin-top: 64px;
-}
+
+/* Sidebar Style */
 .sidebar-container {
     position: sticky;
     overflow-y: scroll;
@@ -70,12 +71,15 @@
     border-radius: 4px;
 }
 
+/* main Section */
 .main-section-container {
-    
+    margin-top: 64px;
     background: #fafafa;
 }
 
 
+
+/* Footer Style */
 .footer-links-inner-container a {
     display: block;
     color: #666;
