@@ -27,14 +27,14 @@ const Header = () => {
                                 </Link>
                             </span>
                             <span className="navigation-item">
-                                <Link href={"/docs"}>
+                                <Link href={"/docs/get-started"}>
                                     <a className="block capitalize ">
                                         Toturials
                                     </a>
                                 </Link>
                             </span>
                             <span className="navigation-item">
-                                <Link href={"/docs"}>
+                                <Link href={"/guides"}>
                                     <a className="block capitalize ">guides</a>
                                 </Link>
                             </span>
@@ -80,14 +80,14 @@ const Header = () => {
                                 Feedback
                             </span>
                             <span className="navigation-item">
-                                <Link href={"/docs"}>
+                                <Link href={"/support"}>
                                     <a className="block capitalize ">
                                         support
                                     </a>
                                 </Link>
                             </span>
                             <span className="navigation-item">
-                                <Link href={"/docs"}>
+                                <Link href={"/blog"}>
                                     <a className="block capitalize ">blog</a>
                                 </Link>
                             </span>

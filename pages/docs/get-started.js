@@ -1,23 +1,20 @@
-import ScrollHighlight from "../../components/ScrollHighlight";
 import { getSinglePage } from "../../services/GhostService";
-import { pageTitle } from "../../styles/home.module.css";
-function Docs({ title, html }) {
+
+function GetStart({ title, html }) {
     return (
-        <div className="flex items-start">
+        <div className="text-xl">
             <div className=" max-w-2xl p-12 ">
-                <div className="mt-7">
-                    <h1 className="page-title">{title}</h1>
-                </div>
+                <h1 className=" page-title ">{title}</h1>
 
                 <div dangerouslySetInnerHTML={{ __html: html }} />
             </div>
-            <ScrollHighlight />
+            <div></div>
         </div>
     );
 }
 
 export async function getStaticProps() {
-    const { html, title } = await getSinglePage({ slug: "docs" });
+    const { html, title } = await getSinglePage({slug: "get-started"});
     if (!title) {
         return {
             notFound: true,
@@ -32,4 +29,4 @@ export async function getStaticProps() {
     };
 }
 
-export default Docs;
+export default GetStart;

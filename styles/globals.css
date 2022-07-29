@@ -28,7 +28,6 @@
     @apply text-secondary block capitalize text-sm px-2.5 cursor-text border border-[#eaeaea] hover:text-black;
 }
 
-
 /* Sidebar Style */
 .sidebar-container {
     position: sticky;
@@ -75,13 +74,51 @@
 .main-section-container {
     margin-top: 64px;
     background: #fafafa;
+    max-width: 1440px;
 }
 
+.main-section-container .page-title {
+    font-size: 3rem;
+    letter-spacing: -0.066875rem;
+    font-weight: 700;
+    line-height: 3.5rem;
+}
 
+.main-section-container p {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.6;
+    margin: 16px 0;
+}
+
+.main-section-container h2 {
+    margin-top: 54px;
+    font-size: 2rem;
+    letter-spacing: -0.049375rem;
+    font-weight: 600;
+    line-height: 2.5rem;
+}
+
+.main-section-container .scroll-highlight-container {
+    padding: 20px;
+    z-index: 1;
+    height: calc(100vh - var(--header-height));
+    position: sticky;
+    position: -webkit-sticky;
+    top: 64px;
+    flex-shrink: 0;
+    transition: 0.16s;
+    border-left: 1px solid #eaeaea;
+    width: 300px;
+}
+
+.main-section-container p strong {
+    font-weight: bold;
+}
 
 /* Footer Style */
 .footer-links-inner-container a {
     display: block;
     color: #666;
-    @apply hover:text-black
+    @apply hover:text-black;
 }
