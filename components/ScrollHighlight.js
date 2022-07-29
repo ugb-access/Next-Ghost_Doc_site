@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 
 const ScrollHighlight = ({ links, activeClass }) => {
-    console.log(activeClass, "activeClass");
 
     return (
         <aside className="scroll-highlight-container">
