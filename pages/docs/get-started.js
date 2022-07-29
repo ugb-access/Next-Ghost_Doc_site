@@ -1,6 +1,7 @@
 import { getSinglePage } from "../../services/GhostService";
 
 function GetStart({ title, html }) {
+    
     return (
         <div className="text-xl">
             <div className=" max-w-2xl p-12 ">
@@ -14,7 +15,8 @@ function GetStart({ title, html }) {
 }
 
 export async function getStaticProps() {
-    const { html, title } = await getSinglePage({slug: "get-started"});
+    const { html, title} = await getSinglePage({slug: "get-started"});
+    
     if (!title) {
         return {
             notFound: true,
