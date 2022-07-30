@@ -1,9 +1,8 @@
-import { useEffect } from "react";
 
 const ScrollHighlight = ({ links, activeClass }) => {
 
     return (
-        <aside className="scroll-highlight-container">
+        <aside className="scroll-highlight-container hidden xl:block ">
             <div className=" flex items-center ">
                 <svg
                     data-testid="geist-icon"

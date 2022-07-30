@@ -9,7 +9,7 @@
 }
 
 .body {
-    scroll-behavior: smooth
+    scroll-behavior: smooth;
 }
 
 /* main wrapper */
@@ -32,6 +32,91 @@
     @apply text-secondary block capitalize text-sm px-2.5 cursor-text border border-[#eaeaea] hover:text-black;
 }
 
+.header-burger-icon-container {
+    height: 40px;
+    width: 40px;
+    margin: 0 -10px;
+}
+
+.header-burger-icon {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -moz-box-orient: vertical;
+    -moz-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.header-burger-icon .line-top {
+    height: 1px;
+    width: 22px;
+    background-color: #000;
+    -webkit-transition: -webkit-transform.15s ease;
+    -moz-transition: -moz-transform.15s ease;
+    -o-transition: -o-transform.15s ease;
+    transition: -webkit-transform.15s ease;
+    transition: -moz-transform.15s ease;
+    transition: -o-transform.15s ease;
+    transition: transform 0.15s ease;
+    -webkit-transform: translateY(-4px) rotate(0deg);
+    -moz-transform: translateY(-4px) rotate(0deg);
+    -ms-transform: translateY(-4px) rotate(0deg);
+    -o-transform: translateY(-4px) rotate(0deg);
+    transform: translateY(-4px) rotate(0deg);
+}
+
+.header-burger-icon .line-bottom {
+    height: 1px;
+    width: 22px;
+    background-color: #000;
+    -webkit-transition: -webkit-transform.15s ease;
+    -moz-transition: -moz-transform.15s ease;
+    -o-transition: -o-transform.15s ease;
+    transition: -webkit-transform.15s ease;
+    transition: -moz-transform.15s ease;
+    transition: -o-transform.15s ease;
+    transition: transform 0.15s ease;
+    -webkit-transform: translateY(4px) rotate(0deg);
+    -moz-transform: translateY(4px) rotate(0deg);
+    -ms-transform: translateY(4px) rotate(0deg);
+    -o-transform: translateY(4px) rotate(0deg);
+    transform: translateY(4px) rotate(0deg);
+}
+
+.header-burger-icon.open .line-top {
+    -webkit-transform: translateY(1px) rotate(45deg);
+    -moz-transform: translateY(1px) rotate(45deg);
+    -ms-transform: translateY(1px) rotate(45deg);
+    -o-transform: translateY(1px) rotate(45deg);
+    transform: translateY(1px) rotate(45deg);
+}
+.header-burger-icon.open .line-bottom {
+    -webkit-transform: translateY(0px) rotate(-45deg);
+    -moz-transform: translateY(0px) rotate(-45deg);
+    -ms-transform: translateY(0px) rotate(-45deg);
+    -o-transform: translateY(0px) rotate(-45deg);
+    transform: translateY(0px) rotate(-45deg);
+}
+
 /* Sidebar Style */
 .sidebar-container {
     position: sticky;
@@ -45,6 +130,17 @@
     top: 64px;
     padding: 20px;
     flex-shrink: 0;
+}
+
+/* mobile navbar styles */
+.mobile-navbar-container {
+    width: 100%;
+    -webkit-transition: all.1s ease;
+    -moz-transition: all.1s ease;
+    -o-transition: all.1s ease;
+    transition: all.1s ease;
+    background: #fff;
+    padding: 48px 0;
 }
 
 .sidebar-inner-container a {
@@ -103,8 +199,6 @@
     line-height: 2.5rem;
 }
 
-
-
 .main-section-container p strong {
     font-weight: bold;
 }
@@ -130,8 +224,8 @@
 .main-section-container .scroll-highlight-container a {
     display: block;
     color: #666;
-    
-    @apply hover:text-black capitalize my-4 text-sm ;
+
+    @apply hover:text-black capitalize my-4 text-sm;
 }
 .main-section-container .scroll-highlight-container a.active {
     color: #000;
@@ -147,3 +241,17 @@
 .footer-links-inner-container a.active {
     color: #000;
 }
+
+.footer .nav details summary::before {
+    content: "+";
+    display: block;
+    
+}
+
+.footer .nav details summary::-webkit-details-marker,
+details summary::marker {
+    display: none;
+    content: "";
+}
+
+

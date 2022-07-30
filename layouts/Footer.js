@@ -4,8 +4,8 @@ import Link from "next/link";
 const Footer = () => {
     return (
         <footer className=" w-full text-sm border-[#eaeaea] border-t p-6 pt-7 ">
-            <nav className=" mx-auto max-w-7xl flex flex-nowrap justify-between ">
-                <div className=" pt-3 ">
+            <nav className=" mx-auto max-w-7xl lg:flex flex-nowrap justify-between block ">
+                <div className=" pt-3 flex justify-center lg:block ">
                     <Link href={"/"}>
                         <a>
                             <Image
@@ -17,89 +17,198 @@ const Footer = () => {
                         </a>
                     </Link>
                 </div>
-                <div className="pt-3 mr-6 ">
-                    <div className="footer-links-header my-3">Frameworks</div>
-                    <div className="footer-links-inner-container">
-                        <li className=" list-none py-2 ">
-                            <Link href={"/next"}>
-                                <a>Next.js</a>
-                            </Link>
-                        </li>
-                        <li className=" list-none py-2 ">
-                            <Link href={"/react"}>
-                                <a>Create React App</a>
-                            </Link>
-                        </li>
-                        <li className=" list-none py-2 ">
-                            <Link href={"/svelte"}>
-                                <a>Svelte</a>
-                            </Link>
-                        </li>
-                        <li className=" list-none py-2 ">
-                            <Link href={"/nuxt"}>
-                                <a>Nuxt</a>
-                            </Link>
-                        </li>
-                        <li className=" list-none py-2 ">
-                            <Link href={"/gatsby"}>
-                                <a>Gatsby</a>
-                            </Link>
-                        </li>
-                        <li className=" list-none py-2 ">
-                            <Link href={"/vue"}>
-                                <a>Vue</a>
-                            </Link>
-                        </li>
+                <div className="pt-3 mr-6  ">
+                    <div className="lg:hidden max-w-md mx-auto">
+                        <details
+                            className="open:bg-white px-6 mb-2 rounded-lg"
+                            
+                        >
+                            <summary className="text-sm leading-6 text-slate-900 dark:text-white font-semibold select-none flex items-center justify-between ">
+                                Frameworks
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    className="h-5 w-5"
+                                    viewBox="0 0 20 20"
+                                    fill="currentColor"
+                                >
+                                    <path
+                                        fillRule="evenodd"
+                                        d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z"
+                                        clipRule="evenodd"
+                                    />
+                                </svg>
+                            </summary>
+                            <div className=" transition ">
+                                <div className="footer-links-inner-container text-center">
+                                    <li className=" list-none py-2 ">
+                                        <Link href={"/next"}>
+                                            <a>Next.js</a>
+                                        </Link>
+                                    </li>
+                                    <li className=" list-none py-2 ">
+                                        <Link href={"/react"}>
+                                            <a>Create React App</a>
+                                        </Link>
+                                    </li>
+                                    <li className=" list-none py-2 ">
+                                        <Link href={"/svelte"}>
+                                            <a>Svelte</a>
+                                        </Link>
+                                    </li>
+                                    <li className=" list-none py-2 ">
+                                        <Link href={"/nuxt"}>
+                                            <a>Nuxt</a>
+                                        </Link>
+                                    </li>
+                                    <li className=" list-none py-2 ">
+                                        <Link href={"/gatsby"}>
+                                            <a>Gatsby</a>
+                                        </Link>
+                                    </li>
+                                    <li className=" list-none py-2 ">
+                                        <Link href={"/vue"}>
+                                            <a>Vue</a>
+                                        </Link>
+                                    </li>
+                                </div>
+                            </div>
+                        </details>
+                    </div>
+                    <div className="hidden lg:block">
+                        <div className="footer-links-header my-3">
+                            Frameworks
+                        </div>
+                        <div className="footer-links-inner-container">
+                            <li className=" list-none py-2 ">
+                                <Link href={"/next"}>
+                                    <a>Next.js</a>
+                                </Link>
+                            </li>
+                            <li className=" list-none py-2 ">
+                                <Link href={"/react"}>
+                                    <a>Create React App</a>
+                                </Link>
+                            </li>
+                            <li className=" list-none py-2 ">
+                                <Link href={"/svelte"}>
+                                    <a>Svelte</a>
+                                </Link>
+                            </li>
+                            <li className=" list-none py-2 ">
+                                <Link href={"/nuxt"}>
+                                    <a>Nuxt</a>
+                                </Link>
+                            </li>
+                            <li className=" list-none py-2 ">
+                                <Link href={"/gatsby"}>
+                                    <a>Gatsby</a>
+                                </Link>
+                            </li>
+                            <li className=" list-none py-2 ">
+                                <Link href={"/vue"}>
+                                    <a>Vue</a>
+                                </Link>
+                            </li>
+                        </div>
                     </div>
                 </div>
-                <div className="pt-3 mr-6">
-                    <div className="footer-links-header my-3">Resources</div>
-
-                    <div className="footer-links-inner-container">
-                        <li className=" list-none py-2 ">
-                            <Link href={"/docs"}>
-                                <a>Documentation</a>
-                            </Link>
-                        </li>
-                        <li className=" list-none py-2 ">
-                            <Link href={"/react"}>
-                                <a>Experts</a>
-                            </Link>
-                        </li>
-                        <li className=" list-none py-2 ">
-                            <Link href={"/svelte"}>
-                                <a>Guides</a>
-                            </Link>
-                        </li>
-                        <li className=" list-none py-2 ">
-                            <Link href={"/nuxt"}>
-                                <a>Support</a>
-                            </Link>
-                        </li>
-                        <li className=" list-none py-2 ">
-                            <Link href={"/gatsby"}>
-                                <a>API Reference</a>
-                            </Link>
-                        </li>
-                        <li className=" list-none py-2 ">
-                            <Link href={"/vue"}>
-                                <a>OSS</a>
-                            </Link>
-                        </li>
-                        <li className=" list-none py-2 ">
-                            <Link href={"/vue"}>
-                                <a>Command-Line</a>
-                            </Link>
-                        </li>
-                        <li className=" list-none py-2 ">
-                            <Link href={"/vue"}>
-                                <a>Integrations</a>
-                            </Link>
-                        </li>
+                <div className="pt-3 mr-6  ">
+                    <div className="lg:hidden max-w-md mx-auto">
+                        <details
+                            className="open:bg-white px-6 mb-2 rounded-lg"
+                            
+                        >
+                            <summary className="text-sm leading-6 text-slate-900 dark:text-white font-semibold select-none flex items-center justify-between">
+                                Resources
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    className="h-5 w-5"
+                                    viewBox="0 0 20 20"
+                                    fill="currentColor"
+                                >
+                                    <path
+                                        fillRule="evenodd"
+                                        d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z"
+                                        clipRule="evenodd"
+                                    />
+                                </svg>
+                            </summary>
+                            <div className=" transition ">
+                                <div className="footer-links-inner-container text-center">
+                                    <li className=" list-none py-2 ">
+                                        <Link href={"/next"}>
+                                            <a>Documentation</a>
+                                        </Link>
+                                    </li>
+                                    <li className=" list-none py-2 ">
+                                        <Link href={"/react"}>
+                                            <a>Experts</a>
+                                        </Link>
+                                    </li>
+                                    <li className=" list-none py-2 ">
+                                        <Link href={"/svelte"}>
+                                            <a>Guides</a>
+                                        </Link>
+                                    </li>
+                                    <li className=" list-none py-2 ">
+                                        <Link href={"/nuxt"}>
+                                            <a>Support</a>
+                                        </Link>
+                                    </li>
+                                    <li className=" list-none py-2 ">
+                                        <Link href={"/gatsby"}>
+                                            <a>API Reference</a>
+                                        </Link>
+                                    </li>
+                                    <li className=" list-none py-2 ">
+                                        <Link href={"/vue"}>
+                                            <a>OSS</a>
+                                        </Link>
+                                    </li>
+                                </div>
+                            </div>
+                        </details>
+                    </div>
+                    <div className="hidden lg:block">
+                        <div className="footer-links-header my-3">
+                            Resources
+                        </div>
+                        <div className="footer-links-inner-container">
+                            <li className=" list-none py-2 ">
+                                <Link href={"/next"}>
+                                    <a>Documentation</a>
+                                </Link>
+                            </li>
+                            <li className=" list-none py-2 ">
+                                <Link href={"/react"}>
+                                    <a>Experts</a>
+                                </Link>
+                            </li>
+                            <li className=" list-none py-2 ">
+                                <Link href={"/svelte"}>
+                                    <a>Guides</a>
+                                </Link>
+                            </li>
+                            <li className=" list-none py-2 ">
+                                <Link href={"/nuxt"}>
+                                    <a>Support</a>
+                                </Link>
+                            </li>
+                            <li className=" list-none py-2 ">
+                                <Link href={"/gatsby"}>
+                                    <a>API Reference</a>
+                                </Link>
+                            </li>
+                            <li className=" list-none py-2 ">
+                                <Link href={"/vue"}>
+                                    <a>OSS</a>
+                                </Link>
+                            </li>
+                        </div>
                     </div>
                 </div>
 
-                <div className="pt-3 mr-6">
+                <div className="pt-3 mr-6 hidden lg:block">
                     <div className="footer-links-header my-3">Company</div>
                     <div className="footer-links-inner-container">
                         <li className=" list-none py-2 ">
@@ -160,7 +269,7 @@ const Footer = () => {
                     </div>
                 </div>
 
-                <div className="pt-3 ">
+                <div className="pt-3 hidden lg:block ">
                     <div className="footer-links-header my-3"> Legal</div>
                     <div className="footer-links-inner-container">
                         <li className=" list-none py-2 ">
@@ -218,9 +327,7 @@ const Footer = () => {
                         reserved.
                     </span>
                 </div>
-                <div>
-                    
-                </div>
+                <div></div>
             </section>
         </footer>
     );

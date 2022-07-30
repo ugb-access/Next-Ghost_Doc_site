@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import ScrollHighlight from "../../components/ScrollHighlight";
+import Sidebar from "../../layouts/Sidebar";
 import { getSinglePage } from "../../services/GhostService";
+
 function Docs({ title, html }) {
     const [activeClass, setActiveClass] = useState("");
     useEffect(() => {
-        
-
-        window.addEventListener("scroll",scrollHandler);
+        window.addEventListener("scroll", scrollHandler);
 
         return () => window.removeEventListener("scroll", scrollHandler);
     }, []);
@@ -33,23 +33,55 @@ function Docs({ title, html }) {
         }
     };
     return (
-        <div className="flex items-start">
-            <div className=" max-w-2xl p-12 ">
-                <div className="mt-7">
-                    <h1 className="page-title">
-                        <a href="#">{title}</a>
-                    </h1>
-                </div>
-                <div dangerouslySetInnerHTML={{ __html: html }} />
-            </div>
-            <ScrollHighlight
-                links={[
-                    { url: "#quickstart", name: "quickstart" },
-                    { url: "#toturial", name: "toturial" },
-                    { url: "#products-features", name: "products features" },
+        <div className="flex ">
+            <Sidebar
+                categories={[
+                    {
+                        name: "Projects",
+                        url: "/docs",
+                        children: [
+                            {
+                                name: "Custom Domains",
+                                url: "/custom-domains",
+                            },
+                            {
+                                name: "Enviroment Variables",
+                                url: "/enviroment-variables",
+                            },
+                        ],
+                    },
+
+                    {
+                        name: "Deployments",
+                        url: "deployments",
+                    },
+                    {
+                        name: "Personal Accounts",
+                        url: "personal-accounts",
+                    },
                 ]}
-                activeClass={activeClass}
             />
+            <div className="flex items-start">
+                <div className=" max-w-2xl p-12 ">
+                    <div className="mt-7">
+                        <h1 className="page-title">
+                            <a href="#">{title}</a>
+                        </h1>
+                    </div>
+                    <div dangerouslySetInnerHTML={{ __html: html }} />
+                </div>
+                <ScrollHighlight
+                    links={[
+                        { url: "#quickstart", name: "quickstart" },
+                        { url: "#toturial", name: "toturial" },
+                        {
+                            url: "#products-features",
+                            name: "products features",
+                        },
+                    ]}
+                    activeClass={activeClass}
+                />
+            </div>
         </div>
     );
 }

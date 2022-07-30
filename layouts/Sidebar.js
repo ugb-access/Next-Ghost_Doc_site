@@ -2,37 +2,11 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { Fragment } from "react";
 
-const Sidebar = () => {
-    const categories = [
-        {
-            name: "Projects",
-            url: "/docs",
-            children: [
-                {
-                    name: "Custom Domains",
-                    url: "/custom-domains",
-                },
-                {
-                    name: "Enviroment Variables",
-                    url: "/enviroment-variables",
-                },
-            ],
-        },
-
-        {
-            name: "Deployments",
-            url: "deployments",
-        },
-        {
-            name: "Personal Accounts",
-            url: "personal-accounts",
-        },
-
-    ];
+const Sidebar = ({categories}) => {
     const router = useRouter();
    
     return (
-        <div className=" text-xl sidebar-container ">
+        <div className=" text-xl sidebar-container hidden lg:block ">
             <div className="sidebar-inner-container">
                 {categories.map((cat, index) => {
 
