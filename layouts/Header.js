@@ -1,7 +1,57 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { getLatestPosts } from "../services/GhostService";
+import { useState } from "react";
+import dynamic from "next/dynamic";
+const ReactSearch = dynamic(
+    () =>
+        import("react-search-autocomplete").then(
+            (mod) => mod.ReactSearchAutocomplete
+        ),
+    { ssr: false }
+);
+const PopoverComponent = dynamic(
+    () => import("../components/PopoverComponent"),
+    { ssr: false }
+);
 const Header = ({ isOpen, handleHamburgerClick }) => {
+    const [postsLoading, setPostLoading] = useState(false);
+    const [posts, setPosts] = useState([]);
+
+    // const handleOnSearch = (string, results) => {
+    //     console.log(string, "string", results);
+    // };
+    // const handleOnHover = (result) => {
+    //     // the item hovered
+    //     console.log(result, "hover");
+    // };
+
+    // const handleOnSelect = (item) => {
+    //     // the item selected
+    // };
+
+    const handleOnFocus = async () => {
+        if (posts.length == 0) {
+            setPostLoading(true);
+            const allPosts = await getLatestPosts();
+            if (allPosts) {
+                setTimeout(() => {
+                    setPostLoading(false);
+                }, 300);
+                if (allPosts.length > 0) {
+                    const posts_arr = allPosts.map((post) => ({
+                        title: post.title,
+                        description: post.html,
+                        id: post.id,
+                    }));
+
+                    setPosts(posts_arr);
+                }
+            }
+        }
+    };
+
     return (
         <header className="header-container main-wrapper fixed top-0 z-50 w-full bg-white ">
             <div className=" flex items-center h-full max-w-screen-2xl ">
@@ -39,23 +89,7 @@ const Header = ({ isOpen, handleHamburgerClick }) => {
                                 </Link>
                             </span>
                             <div className="developer-dropdown hidden lg:block">
-                                <span className="reference-container !flex items-center">
-                                    Reference
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        className=" w-3 ml-2 "
-                                        fill="none"
-                                        viewBox="0 0 24 24"
-                                        stroke="currentColor"
-                                        strokeWidth={2}
-                                    >
-                                        <path
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                            d="M19 9l-7 7-7-7"
-                                        />
-                                    </svg>
-                                </span>
+                                <PopoverComponent />
                             </div>
                         </div>
                     </nav>
@@ -65,11 +99,45 @@ const Header = ({ isOpen, handleHamburgerClick }) => {
                         <div className="search-bar">
                             <div className=" relative flex items-center justify-center"></div>
                             <div className=" search-input-container  ">
-                                <input
-                                    className="search-input-field px-3 h-8 max-w-[60vw] w-64 rounded-[5px] bg-white border-[#eaeaea] border outline-0 text-left focus:border-black  "
+                                <div className="max-w-[60vw] w-64">
+                                    <ReactSearch
+                                        items={posts}
+                                        fuseOptions={{
+                                            keys: ["name", "description"],
+                                        }} // Search on both fields
+                                        resultStringKeyName="title" // String to display in the results
+                                        // onSearch={handleOnSearch}
+                                        // onHover={handleOnHover}
+                                        // onSelect={handleOnSelect}
+                                        onFocus={handleOnFocus}
+                                        // onClear={handleOnClear}
+                                        showIcon={false}
+                                        placeholder="Search..."
+                                        styling={{
+                                            maxWidth: "60vw",
+                                            width: "256px",
+                                            height: "32px",
+                                            // border: "1px solid darkgreen",
+                                            borderRadius: "5px",
+                                            backgroundColor: "white",
+                                            boxShadow: "none",
+                                            // hoverBackgroundColor: "lightgreen",
+                                            // color: "darkgreen",
+                                            fontSize: "12px",
+                                            fontFamily: "Courier",
+                                            iconColor: "gray",
+                                            lineColor: "gray",
+                                            placeholderColor: "gray",
+                                            clearIconMargin: "3px 8px 0 0",
+                                            zIndex: 2,
+                                        }}
+                                    />
+                                </div>
+                                {/* <input
+                                    className="search-input-field text-black px-3 h-8 max-w-[60vw] w-64 rounded-[5px] bg-white border-[#eaeaea] border outline-0 text-left focus:border-black  "
                                     autoComplete="off"
                                     placeholder="Search..."
-                                />
+                                /> */}
                             </div>
                         </div>
                     </div>

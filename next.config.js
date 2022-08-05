@@ -1,12 +1,15 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    reactStrictMode: true,
+    // reactStrictMode: true,
     swcMinify: true,
     env: {
-        ghostApiUrl: "https://ankush.disdicilo.it",
+        ghostApiUrl: "https://usman.ghost.io",
         ghostAdminKey:
-            "62e14e0af5d1160001567855:303f7fc5f50a64ac780b19cfbef4188461ada5a41624f7dd14fae73ae8bca63d",
-        ghostContentKey: "6ab350c76571c142b5953fa984",
+            "62ed2b31276fc8003d62a405:208a33882ca3158725733200d1ed9ca860e0ad810ee3794c3df7c7f500f098a9",
+        ghostContentKey: "b38963942a5af962cc3f7fa552",
+        NEXT_PUBLIC_AUTH_URL: "",
+        NEXT_PUBLIC_AUTH_REALM: "",
+        NEXT_PUBLIC_AUTH_CLIENT_ID: "",
     },
 };
 

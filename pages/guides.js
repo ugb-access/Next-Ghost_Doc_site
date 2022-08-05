@@ -14,18 +14,21 @@ function Guides({ title, html }) {
 }
 
 export async function getStaticProps() {
-    const { html, title } = await getSinglePage({slug: "guides"});
-    if (!title) {
+    const page = await getSinglePage({ slug: "guides" });
+
+    if (!page) {
         return {
             notFound: true,
         };
     }
+
+    const { title, html } = page;
     return {
         props: {
             html,
             title,
         },
-        revalidate: 120
+        // revalidate: 120,
     };
 }
 

@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { Fragment } from "react";
 
 const Sidebar = ({categories}) => {
     const router = useRouter();

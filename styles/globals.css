@@ -23,6 +23,11 @@
     border-bottom: 1px solid #eaeaea;
 }
 
+.nav-container .navigation-items .navigation-item  {
+    display: flex;
+    align-items: center;
+}
+
 .nav-container .navigation-items .navigation-item a,
 .nav-container .navigation-items .reference-container {
     @apply text-secondary block capitalize text-sm px-2.5 cursor-pointer hover:text-black;
@@ -253,5 +258,6 @@ details summary::marker {
     display: none;
     content: "";
 }
+
 
 

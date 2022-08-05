@@ -1,8 +1,9 @@
+import dynamic from "next/dynamic";
 import { useRouter } from "next/router";
 import { Fragment, useEffect, useState } from "react";
-import Footer from "./Footer";
 import Header from "./Header";
-import MobileNavbar from "./MobileNavbar";
+const Footer = dynamic(() => import("./Footer"));
+const MobileNavbar = dynamic(() => import("./MobileNavbar"));
 
 const StoreLayout = ({ children }) => {
     const router = useRouter()

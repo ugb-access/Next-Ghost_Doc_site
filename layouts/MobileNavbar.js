@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 
 const MobileNavbar = () => {
     const {asPath} = useRouter();
-    console.log(asPath, "aspath")
+
     return (
         <div className="navbar-inner-header-container px-6 lg:hidden">
             <div>

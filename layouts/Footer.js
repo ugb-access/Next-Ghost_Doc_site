@@ -20,10 +20,10 @@ const Footer = () => {
                 <div className="pt-3 mr-6  ">
                     <div className="lg:hidden max-w-md mx-auto">
                         <details
-                            className="open:bg-white px-6 mb-2 rounded-lg"
+                            className="open:bg-white px-6 mb-2 rounded-lg "
                             
                         >
-                            <summary className="text-sm leading-6 text-slate-900 dark:text-white font-semibold select-none flex items-center justify-between ">
+                            <summary className=" text-sm leading-6 text-slate-900 dark:text-white font-semibold select-none flex items-center justify-between ">
                                 Frameworks
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
@@ -38,7 +38,7 @@ const Footer = () => {
                                     />
                                 </svg>
                             </summary>
-                            <div className=" transition ">
+                            <div >
                                 <div className="footer-links-inner-container text-center">
                                     <li className=" list-none py-2 ">
                                         <Link href={"/next"}>

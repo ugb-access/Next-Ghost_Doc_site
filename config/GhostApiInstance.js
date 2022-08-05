@@ -9,4 +9,5 @@ const GhostApiInstance = new GhostContentAPI({
 });
 
 
+
 export default GhostApiInstance;

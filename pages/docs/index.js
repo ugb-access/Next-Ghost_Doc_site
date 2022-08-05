@@ -1,7 +1,13 @@
+import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
-import ScrollHighlight from "../../components/ScrollHighlight";
-import Sidebar from "../../layouts/Sidebar";
+
 import { getSinglePage } from "../../services/GhostService";
+const ScrollHighlight = dynamic(
+    () => import("../../components/ScrollHighlight"),
+    { ssr: false }
+);
+
+const Sidebar = dynamic(() => import("../../layouts/Sidebar"));
 
 function Docs({ title, html }) {
     const [activeClass, setActiveClass] = useState("");
@@ -87,18 +93,21 @@ function Docs({ title, html }) {
 }
 
 export async function getStaticProps() {
-    const { html, title } = await getSinglePage({ slug: "docs" });
-    if (!title) {
+    const page = await getSinglePage({ slug: "get-started" });
+
+    if (!page) {
         return {
             notFound: true,
         };
     }
+
+    const { title, html } = page;
     return {
         props: {
             html,
             title,
         },
-        revalidate: 120,
+        // revalidate: 120,
     };
 }
 
